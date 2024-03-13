@@ -1,0 +1,30 @@
+Write a code to generate a inverted half pyramid pattern using numbers.
+
+Input Description:
+Given an integer R indicates number of rows.
+
+Where 1<=R<=100
+
+Output Description:
+Print the number half pyramid pattern with the size R.
+
+Sample Input :
+5
+Sample Output :
+12345
+1234
+123
+12
+1
+
+CODE:
+
+def half_pyramid_pattern(a):
+    for i in range(a , 0, -1):
+        for j in range(1, i+1):
+            print(j, end = '')
+        print()
+            
+
+n = int(input())
+half_pyramid_pattern(n)
