@@ -1,0 +1,51 @@
+Write a code to generate a half pyramid number pattern.
+
+Input Description:
+Given an even integer R indicates number of rows.
+
+Where 1<=R<=100.
+
+Output Description:
+Print the number half pyramid pattern with the size R.
+
+Sample Input :
+5
+Sample Output :
+12345
+4321
+123
+21
+1
+
+
+CODE:
+
+def odd_number_pattern(rows):
+    for i in range(rows, 0, -1):
+        if i % 2 != 0:
+            for j in range(1, i + 1):
+                print(j, end='')
+            print()
+        else:
+            for j in range(i, 0, -1):
+                print(j, end='')
+            print()
+            
+def even_number_pattern(rows):
+    for i in range(rows, 0, -1):
+        if i % 2 == 0:
+            for j in range(1, i + 1):
+                print(j, end='')
+            print()
+        else:
+            for j in range(i, 0, -1):
+                print(j, end='')
+            print()
+    
+
+# Sample input
+rows = int(input())
+
+if rows % 2 == 0:
+    even_number_pattern(rows)
+else:odd_number_pattern(rows)
