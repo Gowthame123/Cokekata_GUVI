@@ -1,0 +1,40 @@
+Generate a hollow half pyramid pattern using numbers.
+
+Input Description:
+Given an integer R indicates number of rows.
+
+Where 1<=R<=100.
+
+Output Description:
+Print the hollow half pyramid pattern using numbers based on the given integer R.
+
+Sample Input :
+5
+Sample Output :
+1
+12
+1 3
+1  4
+12345
+
+CODE:
+
+def hollow_pattern(a):
+    final = ''
+    for i in range(1, a+1):
+        for j in range(1, i+1):
+
+            if i == 1 or i == 2:
+                final += str(j)
+            elif i == a:
+                final += str(j)
+            else:
+                if j == 1 or j == i:
+                    final += str(j)
+                else:final += ' '
+                    
+        final += '\n'           
+    return final   
+
+n = int(input())
+print(hollow_pattern(n))
