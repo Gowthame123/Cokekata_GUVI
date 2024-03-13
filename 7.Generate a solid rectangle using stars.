@@ -1,0 +1,30 @@
+Generate a solid rectangle using stars. 
+
+Input Description:
+Given an integer R indicates no of rows and an integer C indicates no of columns.
+
+Where 1<=R<=100 and Where 1<=C<=100.
+
+Output Description:
+Print the rectangle using stars with R rows and C columns.
+
+Sample Input :
+3 5
+Sample Output :
+* * * * *
+* * * * *
+* * * * *
+
+CODE:
+
+def sTar(row, clm):
+    final = ''
+    for i in range(1, row + 1):
+        for j in range(1, clm + 1):
+            final += "*" + ' '
+        final =  final.rstrip()
+        final += '\n'    
+    return final
+
+row, clm = map(int, input().split())
+print(sTar(row, clm))
