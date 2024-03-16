@@ -1,0 +1,31 @@
+Generate a  full pyramid using numbers.
+
+Input Description:
+Given an integer R indicates number of rows.
+
+Where 1<=R<=100.
+
+Output Description:
+Print the full pyramid using numbers based on the given integer R.
+
+Sample Input :
+5
+Sample Output :
+    1
+   232
+  34543
+ 4567654
+567898765
+
+CODE:
+
+def print_full_pyramid(rows):
+    for i in range(1, rows + 1):
+        print(" " * (rows - i),end="")
+        for j in range(i, i * 2):
+            print(j, end="")
+        for j in range(i * 2 - 2, i - 1, -1):
+            print(j, end="")
+        print()
+rows = int(input())
+print_full_pyramid(rows)
