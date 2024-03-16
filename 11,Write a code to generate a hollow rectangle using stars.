@@ -1,0 +1,33 @@
+Write a code to generate a hollow rectangle using stars. 
+
+Input Description:
+Given an integer R indicates no of rows and an integer C indicates no of columns.
+
+Where 1<=R<=100 and Where 1<=C<=100.
+
+Output Description:
+Print the hollow rectangle using stars with R rows and C columns.
+
+Sample Input :
+3 5
+Sample Output :
+* * * * *
+*       *
+* * * * *
+
+CODE:
+
+def hollow_rect(a, b):
+    final = ''
+    for i in range(0, a):
+        for j in range(0, b):
+            if i == 0 or i == a-1 or j == 0 or j == b-1:
+                final += "*" + ' '
+            else:
+                final += '  ' 
+        final = final.rstrip()    
+        final += '\n'
+    return final    
+
+row, clm = map(int, input().split())
+print(hollow_rect(row, clm))
