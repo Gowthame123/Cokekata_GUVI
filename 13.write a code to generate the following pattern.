@@ -1,0 +1,64 @@
+write a code to generate the following pattern.
+
+ 
+
+**********
+
+****bb****
+
+***bbbb***
+
+**bbbbbb**
+
+*bbbbbbbb*
+
+**bbbbbb**
+
+***bbbb***
+
+****bb****
+
+**********
+
+Input Description:
+Given an even integer R indicates number of stars in first and last row.R is always an even number.
+
+Where 2<=R<=100.
+
+Output Description:
+Print the pattern based on the given integer R.
+
+Sample Input :
+10
+Sample Output :
+**********
+****bb****
+***bbbb***
+**bbbbbb**
+*bbbbbbbb*
+**bbbbbb**
+***bbbb***
+****bb****
+**********
+
+CODE:
+
+R = int(input())
+
+# Check if R is even
+if R % 2 == 0:
+    # Print the top half of the diamond
+    for i in range((R // 2)-1):
+        print("*" * (R // 2 - i), end="")
+        print("b" * (2 * i), end="")
+        print("*" * (R // 2 - i))
+    
+
+    # Print the bottom half of the diamond
+    for i in range(R // 2 - 1, -1, -1):
+        print("*" * (R // 2 - i), end="")
+        print("b" * (2 * i), end="")
+        print("*" * (R // 2 - i))
+else:
+    print("R must be an even number.")
+
