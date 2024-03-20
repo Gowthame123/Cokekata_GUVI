@@ -1,0 +1,54 @@
+Wrrite a code to generate the following pattern.
+
+bbbb*bbbb
+
+bbb***bbb
+
+bb*****bb
+
+b*******b
+
+*********
+
+b*******b
+
+bb*****bb
+
+bbb***bbb
+
+bbbb*bbbb
+
+Input Description:
+Given an odd integer R indicates number of rows.R is always an odd number.
+
+where 1<=R<=100.
+
+Output Description:
+Print the character pattern based on the given input R.
+
+Sample Input :
+9
+Sample Output :
+bbbb*bbbb
+bbb***bbb
+bb*****bb
+b*******b
+*********
+b*******b
+bb*****bb
+bbb***bbb
+bbbb*bbbb
+
+
+CODE:
+
+def print_pattern(R):
+    # Upper triangle
+    for i in range(R // 2, -1, -1):
+        print('b' * i + '*' * (R - 2 * i) + 'b' * i)
+
+    # Lower triangle
+    for i in range(1, R // 2 + 1):
+        print('b' * i + '*' * (R - 2 * i) + 'b' * i)
+n = int(input())
+print_pattern(n)
