@@ -1,0 +1,50 @@
+In the IPL season’s valedictory function the organizers have organized for a dance program. The dance has to be performed by men along with the points of the diagonals of the square of side ‘n’ and the females along with points of the borders. The remaining positions are filled by children. You have to determine their respective positions by writing a program.
+
+ 
+
+Input Description:
+Given an integer N indicates representing the matrix (N*N).
+
+where 1<=N<=100.
+
+Output Description:
+Print the N*N character matrix with the character F(Female), M(Male), C(Children).
+
+Sample Input :
+7
+Sample Output :
+M F F F F F M
+F M C C C M F
+F C M C M C F
+F C C M C C F
+F C M C M C F
+F M C C C M F
+M F F F F F M
+
+CODE:
+
+def generate_matrix(n):
+    matrix = [[' ' for _ in range(n)] for _ in range(n)]
+
+    for i in range(n):
+        for j in range(n):
+            if i == j or i + j+1 == n:
+                matrix[i][j] = 'M'
+            elif i == 0 or j == 0 or i == n-1 or j ==n-1:
+                matrix[i][j] = 'F'
+            else:matrix[i][j] = "C" 
+        matrix += '\n'    
+
+    return matrix
+
+def print_matrix(matrix):
+    for row in matrix:
+        print(' '.join(row))
+
+if __name__ == "__main__":
+    N = int(input())
+    if 1 <= N <= 100:
+        result = generate_matrix(N)
+        print_matrix(result)
+    else:
+        print("Input out of bounds. Please enter a value between 1 and 100.")
