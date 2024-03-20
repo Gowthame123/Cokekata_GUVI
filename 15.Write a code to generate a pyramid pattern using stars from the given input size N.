@@ -1,0 +1,32 @@
+Write a code to generate a pyramid pattern using stars from the given input size N.
+
+Input Description:
+Given an integer R indicates number of rows.
+
+Where 1<=R<=100.
+
+Output Description:
+Print the star pyramid with the given integer R.
+
+Sample Input :
+5
+Sample Output :
+*
+* *
+* * *
+* * * *
+* * * * *
+
+CODE:
+
+def right_angled(a):
+    final = ""
+    for i in range(1, a + 1):
+        final += ('* ') * i 
+         
+        final = final.rstrip() 
+        final += '\n'
+    return final    
+
+n = int(input())
+print(right_angled(n))
