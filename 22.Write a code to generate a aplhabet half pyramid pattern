@@ -1,0 +1,31 @@
+Write a code to generate a aplhabet half pyramid pattern.
+
+Input Description:
+Given an integer R indicates number of rows.
+
+Where 1<=R<=26.
+
+Output Description:
+Print the alphabet half pyramid pattern according to the given integer R.
+
+Sample Input :
+5
+Sample Output :
+EDCBA
+EDCB
+EDC
+ED
+E
+
+CODE:
+
+def print_alphabet_half_pyramid(rows):
+    ascii_value_A = ord('A')
+    
+    for i in range(rows, 0, -1):
+        for j in range(rows, rows - i, -1):
+            print(chr(ascii_value_A + j - 1), end='')
+        print()
+
+rows = int(input())
+print_alphabet_half_pyramid(rows)
